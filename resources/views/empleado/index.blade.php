@@ -25,6 +25,7 @@
                     <th>Nombre</th>
                     <th>Apellido Paterno</th>
                     <th>Apellido Materno</th>
+                    <th>DNI</th>
                     <th>Correo</th>
                     <th>Direccion</th>
                     <th>Acciones</th>
@@ -42,6 +43,7 @@
                         <td>{{$empleado->Nombre}}</td>
                         <td>{{$empleado->ApellidoPaterno}}</td>
                         <td>{{$empleado->ApellidoMaterno}}</td>
+                        <td>{{$empleado->DNI}}</td>
                         <td>{{$empleado->Correo}}</td>
                         <td>{{$empleado->Direccion}}</td>
                         <td>

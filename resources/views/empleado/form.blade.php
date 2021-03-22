@@ -33,10 +33,15 @@
 </div>
 
 <div class="form-group">
+    <label for="DNI">DNI</label>
+    <input class="form-control" type="text" name="DNI" 
+            value="{{ isset($empleado->DNI)?$empleado->DNI:old('DNI') }}" id="DNI">
+</div>
+
+<div class="form-group">
     <label for="Correo">Correo</label>
     <input class="form-control" type="text" name="Correo" 
             value="{{ isset($empleado->Correo)?$empleado->Correo:old('Correo') }}" id="Correo">
-
 </div>
 
 <div class="form-group">
