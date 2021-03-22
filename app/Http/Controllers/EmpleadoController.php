@@ -111,7 +111,7 @@ class EmpleadoController extends Controller
             'Nombre'=>'required|string|max:100',
             'ApellidoPaterno'=>'required|string|max:100',
             'ApellidoMaterno'=>'required|string|max:100',
-            'DNI'=>'required|string|max:8',
+            'DNI'=>'required|string|min:8|max:8',
             'Correo'=>'required|string|max:100',
             'Direccion'=>'required|string|max:100',
             
