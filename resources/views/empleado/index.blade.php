@@ -19,7 +19,7 @@
         <br>
         <table>
             <thead class="p-3 mx-auto bg-primary text-dark">
-                <tr>
+                <tr class="mx-5">
                     <th>#</th>
                     <th>Foto</th>
                     <th>Nombre</th>
