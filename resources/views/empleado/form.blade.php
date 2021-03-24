@@ -60,5 +60,5 @@
 
     <input type="submit" value="{{ $modo }} Datos" class="btn btn-success">
 
-    <a class="btn btn-primary"href="{{url('empleado/')}}">Back to Home</a>
+    <a class="btn btn-primary"href="{{url('empleado/')}}"> <i class="fas fa-long-arrow-alt-left"></i> Back to Home</a>
     

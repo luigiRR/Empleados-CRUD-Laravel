@@ -14,7 +14,7 @@
 
            
        
-        <a href="{{url('empleado/create')}}" class="btn btn-success">Registrar nuevo empleado</a>
+        <a href="{{url('empleado/create')}}" class="btn btn-success"> <i class="fas fa-user-plus"></i> Registrar nuevo empleado</a>
         <br>
         <br>
         <table class="table">
@@ -49,7 +49,7 @@
                         <td>
                         
                         <a href="{{url ( '/empleado/'.$empleado->id.'/edit' )}}" class="btn btn-warning">
-                            Editar
+                            <i class="fas fa-edit"></i>Editar
                         </a>
                         
                         <form action="{{url( '/empleado/'.$empleado->id )}}" class="d-inline" method="post">
