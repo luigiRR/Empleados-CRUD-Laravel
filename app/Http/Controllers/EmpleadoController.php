@@ -17,7 +17,7 @@ class EmpleadoController extends Controller
     public function index(Request $request)
     {
         $buscar = $request->get('buscar');
-        $datos['empleados']=Empleado::where('Nombre','Like', '%'.$buscar.'%')->paginate();
+        $datos['empleados']=Empleado::where('Nombre','Like', '%'.$buscar.'%')->paginate(5);
         return view('empleado.index', $datos, ['buscar'=>$buscar]);
     }
 
