@@ -14,21 +14,22 @@
 
            
        
-        <a href="{{url('empleado/create')}}" class="btn btn-success">Registrar nuevo empleado</a>
-        <br>
-        <br>
+        <div class="d-flex">
+            <a href="{{url('empleado/create')}}" class="btn btn-success">Registrar nuevo empleado</a>
+            <br>
+            <br>
 
-        <!--SEARCH EMPLOYES-->
-        <form class="form-inline ml-3">
-            <div class="input-group input-group-sm">
-                <input class="form-control" type="search" name="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-navbar" type="submit">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </div>
+            <!--SEARCH EMPLOYES-->
+            <form class="d-flex form-inline my-2 my-lg-0 ml-5">
+                <input name="buscar"
+                        class="form-control me-2" 
+                        type="search"
+                        placeholder="Buscar Empleado"
+                        aria-label="Search"
+                        value="{{ $buscar }}">
+                <button class="btn btn-info ml-1" type="submit">Buscar</button>
         </form>
+        </div>
         <!--FinSearch-->
         <br>
 
