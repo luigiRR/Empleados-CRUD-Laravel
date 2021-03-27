@@ -33,7 +33,7 @@
         <br>
 
         <table class="table">
-            <thead class="p-3 mx-auto bg-primary text-dark">
+            <thead class="p-3 mx-auto bg-primary text-dark text-center">
                 <tr class="mx-5">
                     <th>#</th>
                     <th>Foto</th>
@@ -63,7 +63,7 @@
                         <td>{{$empleado->Direccion}}</td>
                         <td>
                         
-                        <a href="{{url ( '/empleado/'.$empleado->id.'/edit' )}}" class="btn btn-warning">
+                        <a href="{{url ( '/empleado/'.$empleado->id.'/edit' )}}" class="btn btn-warning mb-1">
                             <i class="fas fa-edit"></i>Editar
                         </a>
                         
