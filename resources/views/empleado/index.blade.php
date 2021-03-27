@@ -13,11 +13,31 @@
          @endif
 
            
-       
         <a href="{{url('empleado/create')}}" class="btn btn-success"> <i class="fas fa-user-plus"></i> Registrar nuevo empleado</a>
         <br>
         <br>
         <table class="table">
+
+        <div class="d-flex">
+            <a href="{{url('empleado/create')}}" class="btn btn-success">Registrar nuevo empleado</a>
+            <br>
+            <br>
+
+            <!--SEARCH EMPLOYES-->
+            <form class="d-flex form-inline my-2 my-lg-0 ml-5">
+                <input name="buscar"
+                        class="form-control me-2" 
+                        type="search"
+                        placeholder="Buscar Empleado"
+                        aria-label="Search"
+                        value="{{ $buscar }}">
+                <button class="btn btn-info ml-1" type="submit">Buscar</button>
+        </form>
+        </div>
+        <!--FinSearch-->
+        <br>
+
+        <table>
             <thead class="p-3 mx-auto bg-primary text-dark">
                 <tr class="mx-5">
                     <th>#</th>

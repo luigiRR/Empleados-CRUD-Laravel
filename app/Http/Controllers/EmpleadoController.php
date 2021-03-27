@@ -14,11 +14,11 @@ class EmpleadoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $datos['empleados']=Empleado::paginate(5);
-        return view('empleado.index', $datos);
+        $buscar = $request->get('buscar');
+        $datos['empleados']=Empleado::where('Nombre','Like', '%'.$buscar.'%')->paginate();
+        return view('empleado.index', $datos, ['buscar'=>$buscar]);
     }
 
     /**
