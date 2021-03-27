@@ -25,7 +25,7 @@
                             placeholder="Buscar Empleado"
                             aria-label="Search"
                             value="{{ $buscar }}">
-                    <button class="btn btn-info ml-1" type="submit">Buscar</button>
+                    <button class="btn btn-info ml-1" type="submit"> <i class="fas fa-search"></i>  </button>
                 </form>
                 <!--FinSearch-->
         </div>
