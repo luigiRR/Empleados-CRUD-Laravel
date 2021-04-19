@@ -15,7 +15,7 @@ class CreateFaltas extends Migration
     {
         Schema::create('faltas', function (Blueprint $table) {
             $table->id();
-            $table->string('FAL_Descripcion');
+            $table->text('FAL_Descripcion');
             $table->string('FAL_Tipo');
             $table->Date('FAL_Fecha');
             $table->timestamps();
