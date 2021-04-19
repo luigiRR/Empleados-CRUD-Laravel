@@ -24,6 +24,18 @@ class CreateEmpleadosTable extends Migration
             $table->string('Direccion');
             $table->string('foto');
 
+            $table->unsignedBigInteger('persona_id')->unique();
+            $table->foreign('persona_id')->references('id')->on('personas')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('role_id')->nullable();
+            $table->foreign('role_id')->references('id')->on('roles')
+                ->onDelete('set null')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('contrato_id')->nullable();
+            $table->foreign('contrato_id')->references('id')->on('contratos')
+                ->onDelete('set null')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
