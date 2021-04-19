@@ -17,7 +17,16 @@ class CreateReportes extends Migration
             $table->id();
 
             $table->string('REP_Nombre');
-            $table->string('REP_Descripcion');
+            $table->text('REP_Descripcion');
+
+            $table->unsignedBigInteger('empleado_id')->unique();
+            $table->foreign('empleado_id')->references('id')->on('empleados')
+                ->onDelete('cascade')->onUpdate('cascade');
+
+            $table->unsignedBigInteger('falta_id')->unique()->nullable();
+            $table->foreign('falta_id')->references('id')->on('faltas')
+                ->onDelete('cascade')->onUpdate('cascade');
+
             $table->timestamps();
         });
     }
