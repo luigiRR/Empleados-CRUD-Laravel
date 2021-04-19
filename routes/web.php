@@ -25,7 +25,7 @@ Route::get('empleado/create', [EmpleadoController::class, 'create']);*/
 
 Route::resource('empleado', EmpleadoController::class)->middleware('auth');
 
-Auth::routes(['register'=>false, 'rese'=>false]);
+Auth::routes(['register'=>true, 'rese'=>false]);
 
 Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 
