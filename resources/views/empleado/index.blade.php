@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid ">
 
         @if(Session :: has('mensaje'))
             <div class="alert alert-success alert-dismissible" role="alert">
@@ -13,7 +13,7 @@
          @endif
 
            
-        <div class="d-flex">
+        <div class="container d-flex justify-content-center">
             <a href="{{url('empleado/create')}}" class="btn btn-success"> <i class="fas fa-user-plus"></i> Registrar nuevo empleado</a>
             <br>
             <br>
@@ -22,7 +22,7 @@
                     <input name="buscar"
                             class="form-control me-2" 
                             type="search"
-                            placeholder="Buscar Empleado"
+                            placeholder="Buscar Empleado (Nombre)"
                             aria-label="Search"
                             value="{{ $buscar }}">
                     <button class="btn btn-info ml-1" type="submit"> <i class="fas fa-search"></i>  </button>
@@ -32,7 +32,7 @@
 
         <br>
 
-        <table class="table">
+        <table class="table border">
             <thead class="p-3 mx-auto bg-primary text-dark text-center">
                 <tr class="mx-5">
                     <th>#</th>
