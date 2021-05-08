@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Contrato;
 
 class ContratoController extends Controller
 {
@@ -14,6 +15,8 @@ class ContratoController extends Controller
     public function index()
     {
         //
+        $datos['contrato']=contrato::paginate(15);
+        return view('contrato.index', $datos);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Reporte;
 
 class ReporteController extends Controller
 {
@@ -14,6 +15,8 @@ class ReporteController extends Controller
     public function index()
     {
         //
+        $datos['reporte']=reporte::paginate(15);
+        return view('reporte.index', $datos);
     }
 
     /**
