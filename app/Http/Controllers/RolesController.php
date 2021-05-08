@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Role;
 
 class RolesController extends Controller
 {
@@ -14,6 +15,8 @@ class RolesController extends Controller
     public function index()
     {
         //
+        $datos['role']=role::paginate(15);
+        return view('roles.index', $datos);
     }
 
     /**

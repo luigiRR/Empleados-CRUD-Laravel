@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Falta;
 
 class FaltaController extends Controller
 {
@@ -14,6 +15,8 @@ class FaltaController extends Controller
     public function index()
     {
         //
+        $datos['falta']=falta::paginate(15);
+        return view('falta.index', $datos);
     }
 
     /**

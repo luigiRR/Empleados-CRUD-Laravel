@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\RolesController;
+use App\Http\Controllers\FaltaController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -32,4 +34,11 @@ Route::get('/home', [EmpleadoController::class, 'index'])->name('home');
 Route::group(['middleware' => 'auth'], function() {
 
     Route::get('/', [EmpleadoController::class, 'index'])->name('home');
+    
 });
+
+/**ROLES */
+Route::get('/roles', [RolesController::class, 'index']);
+
+/**FALTAS */
+Route::get('/falta', [FaltaController::class, 'index']);
