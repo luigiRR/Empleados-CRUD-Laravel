@@ -17,7 +17,7 @@
        <h1 class="text-center">FALTAS</h1>
        <p>Lorem ipsum dolor sit amet.</p>
 
-       <a href="{{url('/')}}">Regresar al menu principal</a>
+       <a class="btn btn-primary" href="{{url('/')}}"> <i class="fas fa-long-arrow-alt-left"></i>Back</a>
 
     </body>
 </html>

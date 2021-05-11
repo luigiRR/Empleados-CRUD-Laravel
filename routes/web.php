@@ -41,6 +41,8 @@ Route::group(['middleware' => 'auth'], function() {
 
 /**ROLES */
 Route::get('/roles', [RolesController::class, 'index']);
+Route::get('/roles/create', [RolesController::class, 'create']);
+Route::post('/roles/store', [RolesController::class, 'store']);
 
 /**FALTAS */
 Route::get('/falta', [FaltaController::class, 'index']);
@@ -50,3 +52,5 @@ Route::get('/reporte', [ReporteController::class, 'index']);
 
 /**CONTRATOS */
 Route::get('/contrato', [ContratoController::class, 'index']);
+Route::get('/contrato/create', [ContratoController::class, 'create']);
+Route::post('/contrato/store', [ContratoController::class, 'store']);

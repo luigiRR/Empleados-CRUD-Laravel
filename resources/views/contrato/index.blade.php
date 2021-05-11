@@ -15,9 +15,31 @@
     </head>
     <body class="container">
        <h1 class="text-center">CONTRATOS</h1>
-       <p>Lorem ipsum dolor sit amet.</p>
 
-       <a href="{{url('/')}}">Regresar al menu principal</a>
+       <a class="btn btn-success" href="{{url('contrato/create')}}">Crear contrato</a>
+
+       <table class="table mt-3">
+            <thead class="p-3 mx-auto bg-primary text-dark">
+                <tr class="mx-5">
+                    <th>Id</th>
+                    <th>CODIGO COTRATO</th>
+                    <th>FECHA CONTRATO</th>
+                <tr>
+            </thead>
+
+            <tbody>
+                @foreach ($contratos as $contrato)
+                <tr>
+                    <td>{{$contrato->id}}</td>
+                    <td>{{$contrato->CONT_Numero}}</td>
+                    <td>{{$contrato->CONT_Fecha}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+
+       <a class="btn btn-primary" href="{{url('/')}}">Regresar al menu principal</a>
 
     </body>
 </html>

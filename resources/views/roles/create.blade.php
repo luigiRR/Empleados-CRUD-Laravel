@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>REPORTES</title>
+        <title>ROLES CREATE</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,10 +14,18 @@
         <!-- Styles -->
     </head>
     <body class="container">
-       <h1 class="text-center">REPORTES</h1>
-       <p>Lorem ipsum dolor sit amet.</p>
 
-       <a class="btn btn-primary" href="{{url('/')}}">Regresar al menu principal</a>
+        <h1 class="text-center text-primary" >CREAR ROL</h1>
+            <form action="{{url('roles/store')}}" method="post">
+            @csrf
+                <label for="ROL_Nombre">NOMBRE ROL</label>
+                <input type="text" name="ROL_Nombre" class="form-control">
+                <br>
+                <label for="ROL_Descripcion">DESCRIPCION ROL</label>
+                <input type="text" name="ROL_Descripcion" class="form-control">
+                <br>
+                <input type="submit" value="Registrar Rol" class="btn btn-success">
+            </form>
 
     </body>
 </html>

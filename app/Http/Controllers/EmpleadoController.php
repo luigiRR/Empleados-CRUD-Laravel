@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Empleado;
 use Illuminate\Http\Request;
+use App\Models\Empleado;
+use App\Models\Contrato;
+use App\Models\Role;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -29,7 +31,9 @@ class EmpleadoController extends Controller
     public function create()
     {
         //
-        return view('empleado.create');
+        $datos['contratos']=contrato::paginate();
+        $datos['roles']=role::paginate();
+        return view('empleado.create', $datos);
     }
 
     /**

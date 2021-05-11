@@ -15,9 +15,30 @@
     </head>
     <body class="container">
        <h1 class="text-center">ROLES</h1>
-       <p>Lorem ipsum dolor sit amet.</p>
 
-       <a href="{{url('/')}}">Regresar al menu principal</a>
+       <a class="btn btn-success" href="{{url('roles/create')}}">Crear rol</a>
+
+        <table class="table mt-3">
+            <thead class="p-3 mx-auto bg-primary text-dark">
+                <tr class="mx-5">
+                    <th>Id</th>
+                    <th>NOMBRE ROL</th>
+                    <th>DESCRIPCIOPN ROL</th>
+                <tr>
+            </thead>
+
+            <tbody>
+                @foreach ($roles as $role)
+                <tr>
+                    <td>{{$role->id}}</td>
+                    <td>{{$role->ROL_Nombre}}</td>
+                    <td>{{$role->ROL_Descripcion}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+       <a href="{{url('/')}}" class="btn btn-primary">Regresar al menu principal</a>
 
     </body>
 </html>

@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>REPORTES</title>
+        <title>CONTRATO CREATE</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,10 +14,18 @@
         <!-- Styles -->
     </head>
     <body class="container">
-       <h1 class="text-center">REPORTES</h1>
-       <p>Lorem ipsum dolor sit amet.</p>
 
-       <a class="btn btn-primary" href="{{url('/')}}">Regresar al menu principal</a>
+        <h1 class="text-center text-primary" >CREAR CONTRATRO</h1>
+            <form action="{{url('contrato/store')}}" method="post">
+            @csrf
+                <label for="CONT_Numero">CODIGO CONTRATO</label>
+                <input type="text" name="CONT_Numero" class="form-control">
+                <br>
+                <label for="CONT_Fecha">FECHA CONTRATO</label>
+                <input type="date" name="CONT_Fecha" class="form-control">
+                <br>
+                <input type="submit" value="Registrar Contrato" class="btn btn-success">
+            </form>
 
     </body>
 </html>

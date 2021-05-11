@@ -15,7 +15,7 @@ class ContratoController extends Controller
     public function index()
     {
         //
-        $datos['contrato']=contrato::paginate(15);
+        $datos['contratos']=contrato::paginate(15);
         return view('contrato.index', $datos);
     }
 
@@ -27,6 +27,7 @@ class ContratoController extends Controller
     public function create()
     {
         //
+        return view('contrato.create');
     }
 
     /**
@@ -38,6 +39,9 @@ class ContratoController extends Controller
     public function store(Request $request)
     {
         //
+        $datoscontrato = request()->except('_token');
+        contrato::insert($datoscontrato);
+        return redirect('contrato');
     }
 
     /**

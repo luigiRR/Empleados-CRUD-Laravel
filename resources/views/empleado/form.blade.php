@@ -51,6 +51,24 @@
 </div>
 
 <div class="form-group">
+    <select name="role_id" class="form-control">
+        <option value="">Seleccione Rol</option>
+        @foreach ($roles as $role)   
+        <option value="{{$role->id}}"> {{$role->ROL_Nombre}} </option>
+        @endforeach
+    </select>
+</div>
+
+<div class="form-group">
+    <select name="contrato_id" class="form-control">
+        <option value="">Seleccione Contrato</option>
+        @foreach ($contratos as $contrato)   
+        <option value="{{$contrato->id}}"> {{$contrato->CONT_Numero}} </option>
+        @endforeach
+    </select>
+</div>
+
+<div class="form-group">
     <label for="foto"></label>
     @if(isset($empleado->foto))
         <img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$empleado->foto }}" width="100" alt="">

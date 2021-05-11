@@ -15,7 +15,7 @@ class RolesController extends Controller
     public function index()
     {
         //
-        $datos['role']=role::paginate(15);
+        $datos['roles']=role::paginate(15);
         return view('roles.index', $datos);
     }
 
@@ -27,6 +27,7 @@ class RolesController extends Controller
     public function create()
     {
         //
+        return view('roles.create');
     }
 
     /**
@@ -38,6 +39,9 @@ class RolesController extends Controller
     public function store(Request $request)
     {
         //
+        $datosrol = request()->except('_token');
+        role::insert($datosrol);
+        return redirect('roles');
     }
 
     /**

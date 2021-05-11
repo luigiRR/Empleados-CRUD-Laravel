@@ -30,10 +30,23 @@
                 <!--FinSearch-->
         </div>
 
+        <div class="container d-flex justify-content-center">
+            <!--CREAR ROLES-->
+            <div class="mx-5 mt-2">
+                <a class="btn btn-success" href="{{url ( '/roles' )}}">roles</a>
+            </div>
+
+            <!--CREAR CONTRATOS -->
+            <div class="mx-5 mt-2">
+                <a class="btn btn-success" href="{{url ( '/contrato' )}}">contratos</a>
+            </div>
+
+        </div>
+
         <br>
 
-        <table class="table border">
-            <thead class="p-3 mx-auto bg-primary text-dark text-center">
+        <table class="table">
+            <thead class="p-3 mx-auto bg-primary text-dark">
                 <tr class="mx-5">
                     <th>#</th>
                     <th>Foto</th>
@@ -43,6 +56,8 @@
                     <th>DNI</th>
                     <th>Correo</th>
                     <th>Direccion</th>
+                    <th>Rol</th>
+                    <th>Contrato</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -61,20 +76,27 @@
                         <td>{{$empleado->DNI}}</td>
                         <td>{{$empleado->Correo}}</td>
                         <td>{{$empleado->Direccion}}</td>
+                        <td>{{$empleado->role_id}}</td>
+                        <td>{{$empleado->contrato_id}}</td>
                         <td>
                         
-                        <a href="{{url ( '/empleado/'.$empleado->id.'/edit' )}}" class="btn btn-warning mb-1">
-                            <i class="fas fa-edit"></i>Editar
-                        </a>
+                            <a href="{{url ( '/empleado/'.$empleado->id.'/edit' )}}" class="btn btn-warning mb-1">
+                                <i class="fas fa-edit"></i>Editar
+                            </a>
+                            
+                            <form action="{{url( '/empleado/'.$empleado->id )}}" class="d-inline" method="post">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                    <input type="submit" 
+                                        onclick="return confirm('¿Quieres Borrar?')" 
+                                        value="Borrar"
+                                        class="btn btn-danger">
+                            </form>
+
+                            <a href="{{url ( '/reporte' )}}" class="btn btn-success mb-1">
+                                <i class="fas fa-file-signature"></i>Reportes
+                            </a>
                         
-                        <form action="{{url( '/empleado/'.$empleado->id )}}" class="d-inline" method="post">
-                            @csrf
-                            {{ method_field('DELETE') }}
-                                 <input type="submit" 
-                                    onclick="return confirm('¿Quieres Borrar?')" 
-                                    value="Borrar"
-                                    class="btn btn-danger">
-                        </form>
                         </td>
                     </tr>
                 @endforeach
