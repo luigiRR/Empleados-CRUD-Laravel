@@ -33,7 +33,9 @@
                 <input type="date" name="FAL_Fecha" class="form-control">
                 <br>
                 <input type="submit" value="Registrar falta" class="btn btn-success">
+                <br>
             </form>
-
+            <br>
+            <a href="{{url('/falta')}}" class="btn btn-primary">Regresar</a>
     </body>
 </html>
