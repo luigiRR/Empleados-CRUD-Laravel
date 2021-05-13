@@ -16,6 +16,7 @@
     <body class="container">
 
         <h1 class="text-center text-primary" >CREAR ROL</h1>
+
             <form action="{{url('roles/store')}}" method="post">
             @csrf
                 <label for="ROL_Nombre">NOMBRE ROL</label>
@@ -27,6 +28,7 @@
                 <input type="submit" value="Registrar Rol" class="btn btn-success">
             </form>
             <br>
-            <a href="{{url('/roles')}}" class="btn btn-primary">Regresar</a>
+
+            <a href="{{url('/roles')}}" class="btn btn-primary display-flex">Regresar</a>
     </body>
 </html>
