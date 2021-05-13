@@ -64,6 +64,8 @@ class RolesController extends Controller
     public function edit($id)
     {
         //
+        $roles=role::findOrFail($id);
+        return view('roles.edit', compact('roles'));
     }
 
     /**
@@ -76,6 +78,10 @@ class RolesController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $roles=request()->except(['_token', '_method']);
+        role::where('id', '=', $id)->update($roles);
+        return redirect('roles');
+
     }
 
     /**

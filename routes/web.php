@@ -43,6 +43,8 @@ Route::group(['middleware' => 'auth'], function() {
 Route::get('/roles', [RolesController::class, 'index']);
 Route::get('/roles/create', [RolesController::class, 'create']);
 Route::post('/roles/store', [RolesController::class, 'store']);
+Route::get('/roles/{id}/edit', [RolesController::class, 'edit']);
+Route::put('/roles/{id}', [RolesController::class, 'update']);
 
 /**FALTAS */
 Route::get('/falta', [FaltaController::class, 'index']);

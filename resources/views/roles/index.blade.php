@@ -24,6 +24,7 @@
                     <th>Id</th>
                     <th>NOMBRE ROL</th>
                     <th>DESCRIPCIOPN ROL</th>
+                    <th class="text-center">ACCIONES</th>
                 <tr>
             </thead>
 
@@ -33,6 +34,9 @@
                     <td>{{$role->id}}</td>
                     <td>{{$role->ROL_Nombre}}</td>
                     <td>{{$role->ROL_Descripcion}}</td>
+                    <td>
+                        <a class="btn btn-warning"href="{{url('/roles/'.$role->id.'/edit')}}">Editar</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
