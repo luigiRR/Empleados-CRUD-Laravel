@@ -64,6 +64,8 @@ class FaltaController extends Controller
     public function edit($id)
     {
         //
+        $falta=falta::findOrFail($id);
+        return view('falta.edit', compact('falta'));
     }
 
     /**
@@ -76,6 +78,9 @@ class FaltaController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $falta=request()->except(['_token', '_method']);
+        falta::where('id', '=', $id)->update($falta);
+        return redirect('falta');
     }
 
     /**

@@ -44,7 +44,8 @@
                 <br>
                 <input type="submit" value="Actualizar Rol" class="btn btn-success">
             </form> -->
-
+        <br>
+        <a href="{{url('/roles')}}" class="btn btn-primary">Regresar</a>
     </body>
 </html>
 
