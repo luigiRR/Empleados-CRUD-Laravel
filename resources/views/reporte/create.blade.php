@@ -47,6 +47,7 @@
 
                 <input type="submit" value="Registrar falta" class="btn btn-success">
             </form>
-
+            <br>
+            <a href="{{url('/reporte')}}" class="btn btn-primary">Regresar</a>
     </body>
 </html>

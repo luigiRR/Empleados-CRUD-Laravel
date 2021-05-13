@@ -26,6 +26,7 @@
                 <br>
                 <input type="submit" value="Registrar Rol" class="btn btn-success">
             </form>
-
+            <br>
+            <a href="{{url('/roles')}}" class="btn btn-primary">Regresar</a>
     </body>
 </html>

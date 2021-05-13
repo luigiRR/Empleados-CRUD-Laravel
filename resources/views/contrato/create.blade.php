@@ -26,6 +26,7 @@
                 <br>
                 <input type="submit" value="Registrar Contrato" class="btn btn-success">
             </form>
-
+            <br>
+            <a href="{{url('/contrato')}}" class="btn btn-primary">Regresar</a>
     </body>
 </html>
