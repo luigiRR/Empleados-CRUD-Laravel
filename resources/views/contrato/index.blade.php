@@ -24,6 +24,7 @@
                     <th>Id</th>
                     <th>CODIGO COTRATO</th>
                     <th>FECHA CONTRATO</th>
+                    <th class="text-center">ACCIONES</th>
                 <tr>
             </thead>
 
@@ -33,6 +34,9 @@
                     <td>{{$contrato->id}}</td>
                     <td>{{$contrato->CONT_Numero}}</td>
                     <td>{{$contrato->CONT_Fecha}}</td>
+                    <td>
+                        <a class="btn btn-warning"href="{{url('/contrato/'.$contrato->id.'/edit')}}">Editar</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

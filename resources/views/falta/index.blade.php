@@ -25,6 +25,7 @@
                     <th>DESCRIPCION FALTA</th>
                     <th>TIPO FALTA</th>
                     <th>FECHA FALTA</th>
+                    <th class="text-center">ACCIONES</th>
                 <tr>
             </thead>
 
@@ -35,6 +36,9 @@
                     <td>{{$falta->FAL_Descripcion}}</td>
                     <td>{{$falta->FAL_Tipo}}</td>
                     <td>{{$falta->FAL_Fecha}}</td>
+                    <td>
+                        <a class="btn btn-warning"href="{{url('/falta/'.$falta->id.'/edit')}}">Editar</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>
