@@ -30,15 +30,17 @@
                 <!--FinSearch-->
         </div>
 
-        <div class="container d-flex justify-content-center">
+        <div class="container d-flex justify-content-center mt-2">
             <!--CREAR ROLES-->
             <div class="mx-5 mt-2">
-                <a class="btn btn-success" href="{{url ( '/roles' )}}">roles</a>
+                <a class="btn btn-success text-dark" href="{{url ( '/roles' )}}">
+                <i class="fas fa-user-tag"></i> roles</a>
             </div>
 
             <!--CREAR CONTRATOS -->
             <div class="mx-5 mt-2">
-                <a class="btn btn-success" href="{{url ( '/contrato' )}}">contratos</a>
+                <a class="btn btn-success text-dark" href="{{url ( '/contrato' )}}">
+                    <i class="fas fa-file-contract"></i> contratos</a>
             </div>
 
         </div>
@@ -58,7 +60,7 @@
                     <th>Direccion</th>
                     <th>Rol</th>
                     <th>Contrato</th>
-                    <th>Acciones</th>
+                    <th class="text-center">Acciones</th>
                 </tr>
             </thead>
 
@@ -93,7 +95,7 @@
                                         class="btn btn-danger">
                             </form>
 
-                            <a href="{{url ( '/reporte' )}}" class="btn btn-success mb-1">
+                            <a href="{{url ( '/reporte' )}}" class="btn btn-success mb-1 text-dark">
                                 <i class="fas fa-file-signature"></i>Reportes
                             </a>
                         

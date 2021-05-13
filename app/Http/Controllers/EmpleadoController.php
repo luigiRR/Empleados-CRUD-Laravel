@@ -125,10 +125,10 @@ class EmpleadoController extends Controller
             'Direccion.required'=>'La direccion es requida',
         ];
 
-        if($request -> hasFile('foto')){
+        /*if($request -> hasFile('foto')){
             $campos = ['foto'=>'required|max:1000|mimes:jpeg,png,jpg'];
             $mensaje = ['foto.required'=>'La foto es requida'];
-        }
+        }*/
 
         $this->validate($request, $campos, $mensaje);
 
@@ -146,6 +146,8 @@ class EmpleadoController extends Controller
 
         Empleado::where('id', '=', $id)->update($datosEmpleado);
         $empleado=Empleado::findOrFail($id);
+        /*$contratos=contrato::findOrFail($id);
+        $roles=role::findOrFail($id);*/
         //return view('empleado.edit', compact('empleado'));
 
         return redirect('empleado')->with('mensaje', 'Empleado Modificado');
