@@ -50,13 +50,22 @@ Route::put('/roles/{id}', [RolesController::class, 'update']);
 Route::get('/falta', [FaltaController::class, 'index']);
 Route::get('/falta/create', [FaltaController::class, 'create']);
 Route::post('/falta/store', [FaltaController::class, 'store']);
+Route::get('/falta/{id}/edit', [FaltaController::class, 'edit']);
+Route::put('/falta/{id}', [FaltaController::class, 'update']);
+
 
 /**REPORTES */
 Route::get('/reporte', [ReporteController::class, 'index']);
 Route::get('/reporte/create', [ReporteController::class, 'create']);
 Route::post('/reporte/store', [ReporteController::class, 'store']);
+Route::get('/reporte/{id}/edit', [ReporteController::class, 'edit']);
+Route::put('/reporte/{id}', [ReporteController::class, 'update']);
+
 
 /**CONTRATOS */
 Route::get('/contrato', [ContratoController::class, 'index']);
 Route::get('/contrato/create', [ContratoController::class, 'create']);
 Route::post('/contrato/store', [ContratoController::class, 'store']);
+Route::get('/contrato/{id}/edit', [ContratoController::class, 'edit']);
+Route::put('/contrato/{id}', [ContratoController::class, 'update']);
+

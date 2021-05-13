@@ -64,6 +64,8 @@ class ContratoController extends Controller
     public function edit($id)
     {
         //
+        $contrato=contrato::findOrFail($id);
+        return view('contrato.edit', compact('contrato'));
     }
 
     /**
@@ -76,6 +78,9 @@ class ContratoController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $contrato=request()->except(['_token', '_method']);
+        contrato::where('id', '=', $id)->update($contrato);
+        return redirect('contrato');
     }
 
     /**
