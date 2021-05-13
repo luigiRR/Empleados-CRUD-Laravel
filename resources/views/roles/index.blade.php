@@ -38,7 +38,7 @@
             </tbody>
         </table>
 
-       <a href="{{url('/')}}" class="btn btn-primary">Regresar al menu principal</a>
+       <a href="{{url('/')}}" class="btn btn-primary">Regresar</a>
 
     </body>
 </html>

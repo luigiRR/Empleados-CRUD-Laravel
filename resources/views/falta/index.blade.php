@@ -15,9 +15,32 @@
     </head>
     <body class="container">
        <h1 class="text-center">FALTAS</h1>
-       <p>Lorem ipsum dolor sit amet.</p>
 
-       <a class="btn btn-primary" href="{{url('/')}}"> <i class="fas fa-long-arrow-alt-left"></i>Back</a>
+       <a class="btn btn-success" href="{{url('falta/create')}}">Crear falta</a>
+
+        <table class="table mt-3">
+            <thead class="p-3 mx-auto bg-primary text-dark">
+                <tr class="mx-5">
+                    <th>Id</th>
+                    <th>DESCRIPCION FALTA</th>
+                    <th>TIPO FALTA</th>
+                    <th>FECHA FALTA</th>
+                <tr>
+            </thead>
+
+            <tbody>
+                @foreach ($faltas as $falta)
+                <tr>
+                    <td>{{$falta->id}}</td>
+                    <td>{{$falta->FAL_Descripcion}}</td>
+                    <td>{{$falta->FAL_Tipo}}</td>
+                    <td>{{$falta->FAL_Fecha}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+       <a href="{{url('/')}}" class="btn btn-primary">Regresar</a>
 
     </body>
 </html>

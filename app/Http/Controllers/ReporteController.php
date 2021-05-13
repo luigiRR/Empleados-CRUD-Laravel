@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reporte;
+use App\Models\Empleado;
+use App\Models\Falta;
 
 class ReporteController extends Controller
 {
@@ -15,7 +17,7 @@ class ReporteController extends Controller
     public function index()
     {
         //
-        $datos['reporte']=reporte::paginate(15);
+        $datos['reportes']=reporte::paginate(15);
         return view('reporte.index', $datos);
     }
 
@@ -27,6 +29,9 @@ class ReporteController extends Controller
     public function create()
     {
         //
+        $datos1['empleados']=Empleado::paginate();
+        $datos2['faltas']=falta::paginate();
+        return view('reporte.create', $datos1, $datos2);
     }
 
     /**
@@ -38,6 +43,9 @@ class ReporteController extends Controller
     public function store(Request $request)
     {
         //
+        $datosreporte = request()->except('_token');
+        reporte::insert($datosreporte);
+        return redirect('reporte');
     }
 
     /**

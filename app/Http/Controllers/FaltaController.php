@@ -15,7 +15,7 @@ class FaltaController extends Controller
     public function index()
     {
         //
-        $datos['falta']=falta::paginate(15);
+        $datos['faltas']=falta::paginate(15);
         return view('falta.index', $datos);
     }
 
@@ -27,6 +27,7 @@ class FaltaController extends Controller
     public function create()
     {
         //
+        return view('falta.create');
     }
 
     /**
@@ -38,6 +39,9 @@ class FaltaController extends Controller
     public function store(Request $request)
     {
         //
+        $datosfalta = request()->except('_token');
+        falta::insert($datosfalta);
+        return redirect('falta');
     }
 
     /**

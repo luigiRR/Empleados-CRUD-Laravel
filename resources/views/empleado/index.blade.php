@@ -14,7 +14,7 @@
 
            
         <div class="container d-flex justify-content-center">
-            <a href="{{url('empleado/create')}}" class="btn btn-success"> <i class="fas fa-user-plus"></i> Registrar nuevo empleado</a>
+            <a href="{{url('empleado/create')}}" class="btn btn-success text-dark"> <i class="fas fa-user-plus"></i> Registrar nuevo empleado</a>
             <br>
             <br>
                 <!--SEARCH EMPLOYES-->
@@ -41,6 +41,12 @@
             <div class="mx-5 mt-2">
                 <a class="btn btn-success text-dark" href="{{url ( '/contrato' )}}">
                     <i class="fas fa-file-contract"></i> contratos</a>
+            </div>
+
+            <!--CREAR FALTAS-->
+            <div class="mx-5 mt-2">
+                <a class="btn btn-success text-dark" href="{{url ( '/falta' )}}">
+                <i class="fas fa-file-prescription"></i> faltas</a>
             </div>
 
         </div>

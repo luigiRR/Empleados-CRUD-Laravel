@@ -46,9 +46,13 @@ Route::post('/roles/store', [RolesController::class, 'store']);
 
 /**FALTAS */
 Route::get('/falta', [FaltaController::class, 'index']);
+Route::get('/falta/create', [FaltaController::class, 'create']);
+Route::post('/falta/store', [FaltaController::class, 'store']);
 
 /**REPORTES */
 Route::get('/reporte', [ReporteController::class, 'index']);
+Route::get('/reporte/create', [ReporteController::class, 'create']);
+Route::post('/reporte/store', [ReporteController::class, 'store']);
 
 /**CONTRATOS */
 Route::get('/contrato', [ContratoController::class, 'index']);

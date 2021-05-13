@@ -39,7 +39,7 @@
         </table>
 
 
-       <a class="btn btn-primary" href="{{url('/')}}">Regresar al menu principal</a>
+       <a class="btn btn-primary" href="{{url('/')}}">Regresar</a>
 
     </body>
 </html>

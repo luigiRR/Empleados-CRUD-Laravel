@@ -15,9 +15,34 @@
     </head>
     <body class="container">
        <h1 class="text-center">REPORTES</h1>
-       <p>Lorem ipsum dolor sit amet.</p>
 
-       <a class="btn btn-primary" href="{{url('/')}}">Regresar al menu principal</a>
+       <a class="btn btn-success" href="{{url('reporte/create')}}">Crear reporte</a>
+
+        <table class="table mt-3">
+            <thead class="p-3 mx-auto bg-primary text-dark">
+                <tr class="mx-5">
+                    <th>Id</th>
+                    <th>NOMBRE REPORTE</th>
+                    <th>DESCRIPCION FALTA</th>
+                    <th>EMPLEADO ID</th>
+                    <th>FALTA ID</th>
+                <tr>
+            </thead>
+
+            <tbody>
+                @foreach ($reportes as $reporte)
+                <tr>
+                    <td>{{$reporte->id}}</td>
+                    <td>{{$reporte->REP_Nombre}}</td>
+                    <td>{{$reporte->REP_Descripcion}}</td>
+                    <td>{{$reporte->empleado_id}}</td>
+                    <td>{{$reporte->falta_id}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+
+       <a href="{{url('/')}}" class="btn btn-primary">Regresar</a>
 
     </body>
 </html>
