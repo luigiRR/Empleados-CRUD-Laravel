@@ -50,7 +50,7 @@
                 <tr class="mx-5">
                     <th>#</th>
                     <th>Foto</th>
-                    <th>Nombre</th>
+                    <th>Nombres</th>
                     <th>Apellido Paterno</th>
                     <th>Apellido Materno</th>
                     <th>DNI</th>
