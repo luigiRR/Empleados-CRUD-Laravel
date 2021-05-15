@@ -26,6 +26,7 @@
                     <th>DESCRIPCION FALTA</th>
                     <th>EMPLEADO ID</th>
                     <th>FALTA ID</th>
+                    <th class="text-center">ACCIONES</th>
                 <tr>
             </thead>
 
@@ -37,6 +38,9 @@
                     <td>{{$reporte->REP_Descripcion}}</td>
                     <td>{{$reporte->empleado_id}}</td>
                     <td>{{$reporte->falta_id}}</td>
+                    <td>
+                        <a class="btn btn-warning"href="{{url('/reporte/'.$reporte->id.'/edit')}}">Editar</a>
+                    </td>
                 </tr>
                 @endforeach
             </tbody>

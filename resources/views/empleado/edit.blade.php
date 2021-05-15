@@ -17,7 +17,7 @@
     <body class="container">
         
     <h1 class="text-center text-primary" >EDITAR EMPLEADO</h1>
-            <form action="/empleado/{{$contrato->id}}" method="post">
+            <form action="/empleado/{{$empleado->id}}" class="form-control" method="post">
             @csrf
 
                 <input type="hidden" name="_method" value="put">
@@ -40,19 +40,30 @@
                 <label for="Direccion">NOMBRE</label>
                 <input type="text" name="Direccion" class="form-control" value="{{$empleado->Direccion}}">
                 <br>
-                <label for="foto">FOTO</label>
-                <input type="text" name="foto" class="form-control" value="{{$empleado->foto}}">
-                <br>
-                <label for="role_id">ID Aula</label>
-                <select name="role_id">
+                <label for="role_id" >ID ROL</label>
+                <select name="role_id" class="form-control">
                     <option value="">SELECCIONE EL ROL</option>
                     @foreach ($role as $role)
-                    <option value="{{$role->id}}">{{$role->nombre_comun}}</option>
+                        <option value="{{$role->id}}">{{$role->ROL_Nombre}}</option>
                     @endforeach
                 </select>
-                <input type="submit" value="Actualizar Contrato" class="btn btn-success">
+                <br><br>
+                <label for="contrato_id">ID CONTRATO</label>
+                <select name="contrato_id" class="form-control">
+                    <option value="">SELECCIONE EL CONTRATO</option>
+                    @foreach ($contrato as $contrato)
+                        <option value="{{$contrato->id}}">{{$contrato->CONT_Numero}}</option>
+                    @endforeach
+                </select>
+                <!--<label for="foto"></label>
+                @if(isset($empleado->foto))
+                    <img class="img-thumbnail img-fluid" src="{{ asset('storage').'/'.$empleado->foto }}" width="100" alt="">
+                @endif
+                <input type="file" name="foto" value="$empleado->foto" id="foto">-->
+                <br><br>
+                <input type="submit" value="Actualizar Empleado" class="btn btn-success">
+                <br><br>
+                <a href="{{url('/empleado')}}" class="btn btn-primary">Regresar</a>
             </form>
-            <br>
-            <a href="{{url('/contrato')}}" class="btn btn-primary">Regresar</a>
     </body>
 </html>
