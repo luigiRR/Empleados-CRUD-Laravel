@@ -93,5 +93,8 @@ class RolesController extends Controller
     public function destroy($id)
     {
         //
+        $roles=role::findOrFail($id);
+        $roles->delete();
+        return redirect('roles');
     }
 }

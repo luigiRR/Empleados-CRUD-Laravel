@@ -106,5 +106,8 @@ class ReporteController extends Controller
     public function destroy($id)
     {
         //
+        $reporte=reporte::findOrFail($id);
+        $reporte->delete();
+        return redirect('reporte');
     }
 }

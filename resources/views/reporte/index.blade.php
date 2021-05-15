@@ -26,8 +26,7 @@
                     <th>DESCRIPCION FALTA</th>
                     <th>EMPLEADO ID</th>
                     <th>FALTA ID</th>
-                    <th>ACIONES</th>
-                    <th class="text-center">ACCIONES</th>
+                    <th>ACCIONES</th>
                 <tr>
             </thead>
 
@@ -41,6 +40,15 @@
                     <td>{{$reporte->falta_id}}</td>
                     <td>
                         <a class="btn btn-warning"href="{{url('/reporte/'.$reporte->id.'/edit')}}">Editar</a>
+
+                        <form action="{{url( '/reporte/'.$reporte->id )}}" class="d-inline" method="post">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                    <input type="submit" 
+                                        onclick="return confirm('¿Quieres Borrar?')" 
+                                        value="Borrar"
+                                        class="btn btn-danger">
+                        </form>
                     </td>
                 </tr>
                 @endforeach

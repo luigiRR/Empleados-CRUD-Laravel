@@ -92,5 +92,8 @@ class FaltaController extends Controller
     public function destroy($id)
     {
         //
+        $falta=falta::findOrFail($id);
+        $falta->delete();
+        return redirect('falta');
     }
 }

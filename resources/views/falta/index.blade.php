@@ -25,7 +25,7 @@
                     <th>DESCRIPCION FALTA</th>
                     <th>TIPO FALTA</th>
                     <th>FECHA FALTA</th>
-                    <th class="text-center">ACCIONES</th>
+                    <th>ACCIONES</th>
                 <tr>
             </thead>
 
@@ -38,6 +38,15 @@
                     <td>{{$falta->FAL_Fecha}}</td>
                     <td>
                         <a class="btn btn-warning"href="{{url('/falta/'.$falta->id.'/edit')}}">Editar</a>
+
+                        <form action="{{url( '/falta/'.$falta->id )}}" class="d-inline" method="post">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                    <input type="submit" 
+                                        onclick="return confirm('¿Quieres Borrar?')" 
+                                        value="Borrar"
+                                        class="btn btn-danger">
+                        </form>
                     </td>
                 </tr>
                 @endforeach

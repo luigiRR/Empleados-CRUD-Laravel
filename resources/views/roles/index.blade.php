@@ -36,6 +36,16 @@
                     <td>{{$role->ROL_Descripcion}}</td>
                     <td>
                         <a class="btn btn-warning"href="{{url('/roles/'.$role->id.'/edit')}}">Editar</a>
+
+                        <form action="{{url( '/roles/'.$role->id )}}" class="d-inline" method="post">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                    <input type="submit" 
+                                        onclick="return confirm('¿Quieres Borrar?')" 
+                                        value="Borrar"
+                                        class="btn btn-danger">
+                        </form>
+                        
                     </td>
                 </tr>
                 @endforeach

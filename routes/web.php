@@ -45,6 +45,7 @@ Route::get('/roles/create', [RolesController::class, 'create']);
 Route::post('/roles/store', [RolesController::class, 'store']);
 Route::get('/roles/{id}/edit', [RolesController::class, 'edit']);
 Route::put('/roles/{id}', [RolesController::class, 'update']);
+Route::delete('/roles/{id}', [RolesController::class, 'destroy']);
 
 /**FALTAS */
 Route::get('/falta', [FaltaController::class, 'index']);
@@ -52,7 +53,7 @@ Route::get('/falta/create', [FaltaController::class, 'create']);
 Route::post('/falta/store', [FaltaController::class, 'store']);
 Route::get('/falta/{id}/edit', [FaltaController::class, 'edit']);
 Route::put('/falta/{id}', [FaltaController::class, 'update']);
-
+Route::delete('/falta/{id}', [FaltaController::class, 'destroy']);
 
 /**REPORTES */
 Route::get('/reporte', [ReporteController::class, 'index']);
@@ -60,7 +61,7 @@ Route::get('/reporte/create', [ReporteController::class, 'create']);
 Route::post('/reporte/store', [ReporteController::class, 'store']);
 Route::get('/reporte/{id}/edit', [ReporteController::class, 'edit']);
 Route::put('/reporte/{id}', [ReporteController::class, 'update']);
-
+Route::delete('/reporte/{id}', [ReporteController::class, 'destroy']);
 
 /**CONTRATOS */
 Route::get('/contrato', [ContratoController::class, 'index']);
@@ -68,6 +69,6 @@ Route::get('/contrato/create', [ContratoController::class, 'create']);
 Route::post('/contrato/store', [ContratoController::class, 'store']);
 Route::get('/contrato/{id}/edit', [ContratoController::class, 'edit']);
 Route::put('/contrato/{id}', [ContratoController::class, 'update']);
-Route::delete('/contrato/{id}', [ContratoController::class, 'destroy'])/*->name('contrato.destroy')*/;
+Route::delete('/contrato/{id}', [ContratoController::class, 'destroy']);
 
 
