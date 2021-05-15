@@ -73,6 +73,10 @@ class ReporteController extends Controller
         $reportes=reporte::findOrFail($id);
         return view('reporte.edit', compact('reportes'));*/
 
+        $reporte=reporte::findOrFail($id);
+        $datos['empleado']=Empleado::paginate();
+        $datos['falta']=falta::paginate();
+        return view('reporte.edit', $datos, compact('reporte'));
     }
 
     /**
@@ -88,6 +92,9 @@ class ReporteController extends Controller
        /*$reportes=request()->except(['_token', '_method']);
         reporte::where('id', '=', $id)->update($reportes);
         return redirect('reporte');*/
+        $reporte=request()->except(['_token', '_method']);
+        reporte::where('id', '=', $id)->update($reporte);
+        return redirect('reporte');
     }
 
     /**
