@@ -24,7 +24,7 @@
                     <th>Id</th>
                     <th>CODIGO COTRATO</th>
                     <th>FECHA CONTRATO</th>
-                    <th class="text-center">ACCIONES</th>
+                    <th>ACCIONES</th>
                 <tr>
             </thead>
 
@@ -36,6 +36,16 @@
                     <td>{{$contrato->CONT_Fecha}}</td>
                     <td>
                         <a class="btn btn-warning"href="{{url('/contrato/'.$contrato->id.'/edit')}}">Editar</a>
+
+                        <form action="{{url( '/contrato/'.$contrato->id )}}" class="d-inline" method="post">
+                                @csrf
+                                {{ method_field('DELETE') }}
+                                    <input type="submit" 
+                                        onclick="return confirm('¿Quieres Borrar?')" 
+                                        value="Borrar"
+                                        class="btn btn-danger">
+                        </form>
+                       
                     </td>
                 </tr>
                 @endforeach

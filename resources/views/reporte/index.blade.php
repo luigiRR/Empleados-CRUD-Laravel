@@ -26,6 +26,7 @@
                     <th>DESCRIPCION FALTA</th>
                     <th>EMPLEADO ID</th>
                     <th>FALTA ID</th>
+                    <th>ACIONES</th>
                 <tr>
             </thead>
 

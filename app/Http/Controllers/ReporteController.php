@@ -57,6 +57,7 @@ class ReporteController extends Controller
     public function show($id)
     {
         //
+        
     }
 
     /**
@@ -68,6 +69,10 @@ class ReporteController extends Controller
     public function edit($id)
     {
         //
+        /*dd($id);
+        $reportes=reporte::findOrFail($id);
+        return view('reporte.edit', compact('reportes'));*/
+
     }
 
     /**
@@ -80,6 +85,9 @@ class ReporteController extends Controller
     public function update(Request $request, $id)
     {
         //
+       /*$reportes=request()->except(['_token', '_method']);
+        reporte::where('id', '=', $id)->update($reportes);
+        return redirect('reporte');*/
     }
 
     /**

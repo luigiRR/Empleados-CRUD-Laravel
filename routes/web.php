@@ -68,4 +68,6 @@ Route::get('/contrato/create', [ContratoController::class, 'create']);
 Route::post('/contrato/store', [ContratoController::class, 'store']);
 Route::get('/contrato/{id}/edit', [ContratoController::class, 'edit']);
 Route::put('/contrato/{id}', [ContratoController::class, 'update']);
+Route::delete('/contrato/{id}', [ContratoController::class, 'destroy'])/*->name('contrato.destroy')*/;
+
 

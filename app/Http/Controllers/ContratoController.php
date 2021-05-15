@@ -92,5 +92,8 @@ class ContratoController extends Controller
     public function destroy($id)
     {
         //
+        $contrato=contrato::findOrFail($id);
+        $contrato->delete();
+        return redirect('contrato');
     }
 }
