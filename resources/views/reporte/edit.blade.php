@@ -44,7 +44,7 @@
                     @endforeach
                 </select>
                 <br><br>
-                <input type="submit" value="Actualizar Empleado" class="btn btn-success">
+                <input type="submit" value="Actualizar Reporte" class="btn btn-success">
                 <br><br>
                 <a href="{{url('/reporte')}}" class="btn btn-primary">Regresar</a>
             </form>

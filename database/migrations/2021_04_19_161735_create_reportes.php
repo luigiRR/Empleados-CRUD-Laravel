@@ -25,7 +25,7 @@ class CreateReportes extends Migration
 
             $table->unsignedBigInteger('falta_id')->unique()->nullable();
             $table->foreign('falta_id')->references('id')->on('faltas')
-                ->onDelete('cascade')->onUpdate('cascade');
+                ->onDelete('set null')->onUpdate('cascade');
 
             $table->timestamps();
         });
