@@ -95,6 +95,18 @@ class ReporteController extends Controller
         $reporte=request()->except(['_token', '_method']);
         reporte::where('id', '=', $id)->update($reporte);
         return redirect('reporte');
+
+        /*
+        if($request ->attribute('empleado_id', 'falta_id')){
+            $campos= ['empleado_id'=>'required'];
+            $campos= ['falta_id'=>'required'];
+            $mensaje= ['empleado_id.required'=>'El empleado es requido'];
+            $mensaje= ['falta_id.required'=> 'La falta es requerida'];
+        }
+
+        $this->validate($request, $campos, $mensaje);
+
+        $datos = request() -> except(['_token', '_method']);*/
     }
 
     /**

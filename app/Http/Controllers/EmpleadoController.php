@@ -19,7 +19,13 @@ class EmpleadoController extends Controller
     public function index(Request $request)
     {
         $buscar = $request->get('buscar');
-        $datos['empleados']=Empleado::where('Nombre','Like', '%'.$buscar.'%')->paginate(5);
+        $datos['empleados']=Empleado::
+            where('Nombre','Like', '%'.$buscar.'%')
+            ->orwhere('ApellidoPaterno', 'Like', '%'.$buscar.'%')
+            ->orwhere('ApellidoMaterno', 'Like', '%'.$buscar.'%')
+            ->orwhere('DNI', 'Like', '%'.$buscar.'%')
+            ->orwhere('Direccion', 'Like', '%'.$buscar.'%')
+            ->paginate(5);
         return view('empleado.index', $datos, ['buscar'=>$buscar]);
     }
 
@@ -119,7 +125,7 @@ class EmpleadoController extends Controller
             'ApellidoMaterno'=>'required|string|max:100',
             'DNI'=>'required|string|min:8|max:8',
             'Correo'=>'required|string|max:100',
-            'Direccion'=>'required|string|max:100',
+            'Direccion'=>'required|string|max:100'
             
         ];
         $mensaje = [
@@ -144,17 +150,12 @@ class EmpleadoController extends Controller
 
         }
 
-
-
         Empleado::where('id', '=', $id)->update($datosEmpleado);
         $empleado=Empleado::findOrFail($id);
         /*$contratos=contrato::findOrFail($id);
         $roles=role::findOrFail($id);*/
         //return view('empleado.edit', compact('empleado'));
-
         return redirect('empleado')->with('mensaje', 'Empleado Modificado');
-
-
     }   
 
     /**
@@ -173,7 +174,6 @@ class EmpleadoController extends Controller
             Empleado::destroy($id);
 
         }
-
         
         return redirect('empleado')->with('mensaje', 'Empleado Borrado');
     }

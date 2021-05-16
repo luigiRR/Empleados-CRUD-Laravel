@@ -16,8 +16,9 @@
     </head>
     <body class="container">
         
+    <br>
     <h1 class="text-center text-primary" >EDITAR EMPLEADO</h1>
-            <form action="/empleado/{{$empleado->id}}" class="form-control" method="post">
+            <form action="/empleado/{{$empleado->id}}"  method="post">
             @csrf
 
                 <input type="hidden" name="_method" value="put">
@@ -64,6 +65,8 @@
                 <input type="submit" value="Actualizar Empleado" class="btn btn-success">
                 <br><br>
                 <a href="{{url('/empleado')}}" class="btn btn-primary">Regresar</a>
+                <br>
+                <br>
             </form>
     </body>
 </html>
